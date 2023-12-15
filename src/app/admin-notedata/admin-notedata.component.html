@@ -1,0 +1,30 @@
+<app-nav-menu></app-nav-menu>
+
+<div *ngIf="note" class="note-container">
+  <div class="note-details">
+    <h2>{{note.title}}</h2>
+    <p class="meta-info">Created by: {{note.userName}} | Created: {{ note.createddate | date:'short' }} | Last Modified: {{ note.lastmodifieddate | date:'short' }}</p>
+    <p>{{note.data}}</p>
+  </div>
+
+  <div class="comments-section">
+    <strong>Comments</strong>
+    <ng-container *ngIf="comments && comments.length > 0; else noComments">
+      <ul class="comment-list">
+        <li *ngFor="let comment of comments" class="comment-item">
+          <div class="comment-content">
+            {{comment.content}}
+          </div>
+          <div class="comment-meta">
+            <span class="meta-info">{{comment.userName}} | {{comment.posteddate| date:'short'}}</span>
+            <button class="delete" (click)="onDelete(comment.id)">Delete</button>
+          </div>
+        </li>
+      </ul>
+    </ng-container>
+    <ng-template #noComments>
+      <p>No comments available</p>
+    </ng-template>
+  </div>
+</div>
+

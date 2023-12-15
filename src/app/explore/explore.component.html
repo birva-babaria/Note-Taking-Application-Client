@@ -1,0 +1,23 @@
+<app-nav-menu></app-nav-menu>
+
+<div class="note-list">
+  <h2 class="section-title">All Notes</h2>
+
+  <ng-container *ngIf="notes && notes.length > 0; else noNotes">
+      <div *ngFor="let note of notes">
+        <div routerLink="/note-data/{{note.id}}" class="note-item">
+          <a class="note-title">
+            <strong>{{ note.title }}</strong>
+          </a>
+          <p class="note-metadata">
+            Created by: {{ note.userName }} | Created on: {{ note.createddate | date }} | Last modified: {{ note.lastmodifieddate | date }}
+          </p>
+          <div class="tooltip">Click to View and Comment!</div>
+        </div>
+      </div>
+  </ng-container>
+
+  <ng-template #noNotes>
+    <p class="text">No notes available</p>
+  </ng-template>
+</div>

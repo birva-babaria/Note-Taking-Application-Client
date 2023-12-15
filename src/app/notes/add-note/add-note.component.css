@@ -1,0 +1,64 @@
+.note-form {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa; 
+  }
+  
+  .form-title {
+    text-align: center;
+    color: #0e59a8; 
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px; 
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ced4da; 
+    border-radius: 4px;
+    background-color: #fff; 
+    color: #495057; 
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  textarea.form-control {
+    resize: vertical;
+  }
+  
+  .btn {
+    background-color: #0b6bd1; 
+    color: #fff;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.15s ease-in-out;
+  }
+  
+  .btn:hover {
+    background-color: #09509b; 
+  }
+  
+  .btn:disabled {
+    background-color: #b8daff;
+    color: #007bff;
+    cursor: not-allowed;
+  }
+  

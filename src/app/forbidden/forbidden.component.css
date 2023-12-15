@@ -1,0 +1,28 @@
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    justify-content: center;
+  }
+  
+
+  .card-content {
+    padding: 16px;
+  }
+  
+
+  .card-title {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #039be5;
+    margin-bottom: 10px;
+  }
+
+  .card-content p {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+    line-height: 1.5;
+  }

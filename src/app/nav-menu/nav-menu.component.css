@@ -1,0 +1,46 @@
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  padding: 15px;
+  background: -webkit-linear-gradient(left, #003366, #004080, #0059b3, #0073e6);
+  color: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.app-name {
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  margin-right: 15px;
+}
+
+.app-name:hover {
+  color: #61dafb;
+}
+
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.nav-link:hover {
+  color: #61dafb;
+}
+
+
+.logout-btn {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-left: 20px;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}

@@ -1,0 +1,12 @@
+.login{
+    width: 145%;
+}
+
+.color{
+    background: -webkit-linear-gradient(right,#003366,#004080,#0059b3
+    , #0073e6);
+}
+
+.radio-group label {
+    margin-right: 20px;
+}

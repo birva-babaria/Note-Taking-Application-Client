@@ -1,0 +1,38 @@
+<app-nav-menu></app-nav-menu>
+
+<div *ngIf="note" class="note-container">
+  <div class="note-details">
+    <h2>{{note.title}}</h2>
+    <p class="meta-info">Created by: {{note.userName}} | Created: {{ note.createddate | date:'short' }} | Last Modified: {{ note.lastmodifieddate | date:'short' }}</p>
+    <p>{{note.data}}</p>
+  </div>
+
+  <form [formGroup]="commentservice.CommentData" autocomplete="off" (submit)="saveComment()" class="comment-form">
+    <div class="form-group">
+      <textarea class="form-control" placeholder="Type your comment here..." name="Content" formControlName="Content" required></textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary" [disabled]="!commentservice.CommentData.valid">Add Comment</button>
+    </div>
+  </form>
+
+  <div class="comments-section">
+    <strong>Comments</strong>
+    <ng-container *ngIf="comments && comments.length > 0; else noComments">
+      <ul class="comment-list">
+        <li *ngFor="let comment of comments" class="comment-item">
+          <div class="comment-content">
+            {{comment.content}}
+          </div>
+          <div class="comment-meta">
+            <span class="meta-info">{{comment.userName}} | {{comment.posteddate| date:'short'}}</span>
+          </div>
+        </li>
+      </ul>
+    </ng-container>
+    <ng-template #noComments>
+      <p>No comments available</p>
+    </ng-template>
+  </div>
+</div>
+

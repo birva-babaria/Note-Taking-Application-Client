@@ -1,0 +1,51 @@
+<app-nav-menu></app-nav-menu>
+
+<div class="note-section">
+  <div class="button-container">
+    <button routerLink="/notes/add-note" class="add-note-button">Add New Note</button>
+  </div>
+  <p class="section-title">Your Notes</p>
+  <ng-container *ngIf="notes && notes.length > 0; else noNotes">
+      <div *ngFor="let note of notes">
+        <div class="note-list">
+          <div [routerLink]="['/notes/edit-note', note.id]">
+            <div class="note-header">
+              <div class="note-title">{{ note.title }}</div>
+                <div class="note-meta">
+                  <span>Created by: {{ note.userName }}</span>
+                  <span class="date-info">Created On: {{ note.createddate | date:'short' }}</span>
+                  <span class="date-info">Last Modified: {{ note.lastmodifieddate | date:'short' }}</span>
+                </div>
+            </div>
+            <div class="note-content">
+                {{ note.data }}
+            </div>
+            <div class="tooltip">Click on title to Edit</div>
+            </div>
+            <button (click)="onDelete(note.id)" class="action-button">Delete</button>
+        </div>
+    </div>
+        
+  </ng-container>
+  <ng-template #noNotes>
+    <p class="text">No notes available</p>
+  </ng-template>
+</div>
+
+<div class="trash-section">
+  <p class="section-title">Trash</p>
+  <ng-container *ngIf="trashes && trashes.length > 0; else noTrash">
+      <div *ngFor="let trash of trashes" class="trash-list">
+        <div class="trash-header">
+          <div class="trash-title">{{ trash.title }}</div>
+          <div class="trash-meta">
+            <span class="date-info">Deleted On: {{ trash.deleteddate | date:'short' }}</span>
+          </div>
+        </div>
+        <button (click)="onRecover(trash.id)" class="action-button-recover">Recover</button>
+      </div>
+  </ng-container>
+  <ng-template #noTrash>
+    <p class="text">Trash Empty!</p>
+  </ng-template>
+</div>

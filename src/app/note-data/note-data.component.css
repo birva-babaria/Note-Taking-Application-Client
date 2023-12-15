@@ -1,0 +1,45 @@
+.note-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .note-details h2 {
+    color: black;
+  }
+  
+  .meta-info {
+    font-size: 0.8em;
+    color: #888;
+  }
+  
+  .comment-form {
+    margin-top: 20px;
+  }
+  
+  .comment-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .comment-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  
+  .comment-content {
+    margin-bottom: 10px;
+  }
+  
+  .comment-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #555;
+  }
+  
